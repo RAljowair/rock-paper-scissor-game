@@ -1,7 +1,7 @@
 import random # importing random library
 import time # importing time library
 
-numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
 tools = {1: "Rock", 2: "Paper", 3: "Scissors"}
 
 
@@ -14,11 +14,13 @@ def print_pulse(string):
 def winning_message():
     print_pulse("\nWinner Winner Chicken Dinner :)")
     print_pulse("Congrats!")
+    play_again()
 
 
 def losing_message():
     print_pulse("\nDefeted :(")
     print_pulse("Better luck next time ;)")
+    play_again()
 
 
 # game introduction message and taking the player's name 
@@ -29,7 +31,7 @@ def start_message():
     while True:
         try:
             player_name = str(input("First what's Your name: "))
-            if any(char.isdigit() for char in player_name) or any(char.isalnum() for char in player_name):
+            if not player_name.isalpha():
                 raise Exception
             else:
                 break
@@ -46,7 +48,7 @@ def choices():
     print_pulse("3.Scissors")
     while True:
         try:
-            player_response = int(input(">"))
+            player_response = int(input("> "))
             if player_response > 3 or player_response < 1:
                 print("You must enter one of these numbers [1, 2, 3]:")
             else:
@@ -78,6 +80,14 @@ def choices():
             print_pulse("\nDRAW!!!")
     compare_choices()
 
+def play_again():
+    print_pulse("Do you want to play again?")
+    response = input("> ")
+    if response.lower() == "yes":
+        choices()
+    else:
+        print_pulse("Ok see you soon :)")
+        exit()
 
 def game():
     start_message()

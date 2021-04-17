@@ -1,3 +1,2 @@
 # rock-paper-scissor-game
-Request the player to choose rock, paper or scissor and the computer will choose a random choice and then compare the choices who's the winner.
-Also it contain excaption handling to not enter an unvalid values.
+A simple rock paper scissors game asking the user to choose what tool would play with. for example 1.Rock 2.Paper 3.Scissors the player should choose 1, 2, or 3 to play. Then the computer chooses randomly one of these tools.
